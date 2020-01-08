@@ -1,0 +1,2 @@
+class Masterpiece < ApplicationRecord
+end

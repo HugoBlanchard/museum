@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Masterpieces</h1>
+
+
+<nav id="navbar-example3" class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">Commence à découvrir les oeuvres du monde...</a>
+  <nav class="nav nav-pills flex-column">
+    <a class="nav-link" href="#item-1">FRANCE</a>
+    <a class="nav-link" href="#item-2">ANGLETERRE</a>
+    <a class="nav-link" href="#item-3">ESPAGNE</a>
+    <a class="nav-link" href="#item-4">ITALIE</a>
+    <a class="nav-link" href="#item-5">ALLEMAGNE</a>
+    <a class="nav-link" href="#item-6">USA</a>
+  </nav>
+</nav>
+
+<div data-spy="scroll" data-target="#navbar-example3" data-offset="0">
+  <h4 id="item-1">FRANCE</h4>
+  <h4 id="item-2">ANGLETERRE</h4>
+  <h4 id="item-3">ESPAGNE</h4>
+  <h4 id="item-4">ITALIE</h4>
+  <h4 id="item-5">ALLEMAGNE</h4>
+  <h4 id="item-6">USA</h4>
+</div>
+
+<% @masterpieces.each do |masterpiece| %>
+<div class="card" style="width: 20rem;">
+  <img src="<%= masterpiece.Picture %>" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= masterpiece.Name %></h5>
+    <p class="card-text"><%= masterpiece.Description %></p>
+    <a href="#" class="card-link"><%= link_to 'Show', masterpiece %> | </a>
+    <a href="#" class="card-link"><%= link_to 'Edit', edit_masterpiece_path(masterpiece) %> | </a>
+    <a href="#" class="card-link"><%= link_to 'Destroy', masterpiece, method: :delete, data: { confirm: 'Are you sure?' } %></a>
+  </div>
+</div>
+ <% end %>
+
+<br>
+
+<%= link_to 'New Masterpiece', new_masterpiece_path %>
