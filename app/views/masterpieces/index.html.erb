@@ -1,4 +1,21 @@
+<body style="
+background-image:url(https://s1.qwant.com/thumbr/0x380/2/4/943dbc58849f9bd2afb52ef0d94a28e297ade971225211929bc760db939f62/GPJBaker-VintageTextures-VintageTexture-BF10724-112-01.jpg?u=https%3A%2F%2Fwww.janeclayton.co.uk%2FProduct_Images%2Ffullzoom%2FGPJBaker-VintageTextures-VintageTexture-BF10724-112-01.jpg&q=0&b=1&p=0&a=1);
+text-align: center;
+" >
+  
+
 <p id="notice"><%= notice %></p>
+
+<MAP NAME="barre">
+<AREA SHAPE="RECT" COORDS="510,285,540,315" HREF="#item-1">
+<AREA SHAPE="RECT" COORDS="497,285,525,256," HREF="#item-2">
+<AREA SHAPE="RECT" COORDS="495,335,523,310" HREF="#item-3">
+<AREA SHAPE="RECT" COORDS="320,45,390,78" HREF="xml.htm" ALT="Notions XML">
+</MAP>
+<IMG SRC="https://nsa40.casimages.com/img/2020/01/08/20010805402737907.jpg" USEMAP="#barre" border=0 width=1100 height=710>
+
+<br>
+<br>
 
 <h1>Masterpieces</h1>
 
@@ -23,20 +40,26 @@
   <h4 id="item-5">ALLEMAGNE</h4>
   <h4 id="item-6">USA</h4>
 </div>
-
+<div class="container">
+<div class="row">
 <% @masterpieces.each do |masterpiece| %>
-<div class="card" style="width: 20rem;">
-  <img src="<%= masterpiece.Picture %>" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title"><%= masterpiece.Name %></h5>
-    <p class="card-text"><%= masterpiece.Description %></p>
-    <a href="#" class="card-link"><%= link_to 'Show', masterpiece %> | </a>
-    <a href="#" class="card-link"><%= link_to 'Edit', edit_masterpiece_path(masterpiece) %> | </a>
-    <a href="#" class="card-link"><%= link_to 'Destroy', masterpiece, method: :delete, data: { confirm: 'Are you sure?' } %></a>
+  <div class="col-sm-4">
+    <div class="card" style="width: 20rem;">
+      <img src="<%= masterpiece.Picture %>" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= masterpiece.Name %></h5>
+        <h class="card-title"><%= masterpiece.Artist %></h6>
+        <p class="card-text"><%= masterpiece.Description %></p>
+        <a href="#" class="card-link"><%= link_to 'Show', masterpiece %> | </a>
+        <a href="#" class="card-link"><%= link_to 'Edit', edit_masterpiece_path(masterpiece) %> | </a>
+        <a href="#" class="card-link"><%= link_to 'Destroy', masterpiece, method: :delete, data: { confirm: 'Are you sure?' } %></a>
+      </div>
+    </div>
   </div>
+<% end %>
 </div>
- <% end %>
-
+</div>
 <br>
 
 <%= link_to 'New Masterpiece', new_masterpiece_path %>
+</body>
