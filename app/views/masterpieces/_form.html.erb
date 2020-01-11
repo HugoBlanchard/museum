@@ -1,37 +1,14 @@
-<%= form_with(model: masterpiece, local: true) do |form| %>
-  <% if masterpiece.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(masterpiece.errors.count, "error") %> prohibited this masterpiece from being saved:</h2>
+<body class="container" style="
+background-color: #e9d9a8;
+font-family: 'Playfair Display SC', serif;
+">
+<%= simple_form_for masterpiece do |f| %>
+  <%= f.input :Name %>
+  <%= f.input :Artist %>
+  <%= f.input :Picture %>
+  <%= f.association :country %>
+  <%= f.input :Description %>
 
-      <ul>
-      <% masterpiece.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :Name %>
-    <%= form.text_field :Name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Artist %>
-    <%= form.text_field :Artist %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Picture %>
-    <%= form.text_field :Picture %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Description %>
-    <%= form.text_area :Description %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <button type="button" class="btn btn-lg btn-primary"><%= f.button :submit %></button>
 <% end %>
+</body>

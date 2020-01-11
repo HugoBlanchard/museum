@@ -1,3 +1,10 @@
+<body style="
+background-color: #e9d9a8;
+font-family: 'Playfair Display SC', serif;
+
+">
+
+<div class="container">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -13,8 +20,18 @@
 </p>
 
 <p>
-  <h3><%= @masterpiece.Description %></h3>
+  <h4><%= @masterpiece.Description %></h4>
 </p>
 
-<%= link_to 'Edit', edit_masterpiece_path(@masterpiece) %> |
-<%= link_to 'Back', masterpieces_path %>
+
+<p>
+  <h4>Pays:  <%= @masterpiece.country.name %></h4>
+</p>
+
+
+<button type="button" class="btn btn-light"><%= link_to 'Edit', edit_masterpiece_path(@masterpiece) %></button>
+<button type="button" class="btn btn-light"><%= link_to 'Back', countries_path %></button>
+</div>
+<br>
+<br>
+</body>

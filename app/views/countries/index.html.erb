@@ -29,33 +29,33 @@ text-align: center;
 <button type="button" class="btn btn-lg btn-block btn-dark"><%= link_to 'New Masterpiece', new_masterpiece_path %></button>
 </div>
 
+<br>
+<br>
+
 <div data-spy="scroll" data-target="#navbar-example3" data-offset="0" style="
 text-align: center;
 ">
-  <h2 id="item-1">FRANCE</h2>
-  <h2 id="item-2">ANGLETERRE</h2>
-  <h2 id="item-3">ESPAGNE</h2>
-  <h2 id="item-4">ITALIE</h2>
-  <h2 id="item-5">ALLEMAGNE</h2>
-  <h2 id="item-6">USA</h2>
-</div>
 
-<div class="container">
-  <div class="row">
-    <% @masterpieces.each do |masterpiece| %>
-        <div class="col-sm-6" style="width: 18rem;">
-          <img src="<%= masterpiece.Picture %>" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title"><%= masterpiece.Name %></h5>
-            <h6 class="card-title"><%= masterpiece.Artist %></h6>
-            <p class="card-text"><%= masterpiece.Description %></p>
-            <a href="#" class="card-link"><%= link_to 'Show', masterpiece %> | </a>
-            <a href="#" class="card-link"><%= link_to 'Edit', edit_masterpiece_path(masterpiece) %> | </a>
-            <a href="#" class="card-link"><%= link_to 'Destroy', masterpiece, method: :delete, data: { confirm: 'Are you sure?' } %></a>
+
+<% @countries.each do |country| %>
+  <h2 id="item-<%= country.id %>"><%= country.name %></h2>
+  <div class="container">
+    <div class="row">
+      <% country.masterpieces.each do |masterpiece| %>
+          <div class="col-sm-6" style="width: 18rem;">
+            <img src="<%= masterpiece.Picture %>" class="card-img-top" alt="...">
+            <div class="card-body" style="text-align: left;">
+              <h5 class="card-title"><%= masterpiece.Name %></h5>
+              <h6 class="card-title"><%= masterpiece.Artist %></h6>
+              <p class="card-text"><%= masterpiece.Description %></p>
+              <a href="#" class="card-link"><%= link_to 'Show', masterpiece %> | </a>
+              <a href="#" class="card-link"><%= link_to 'Edit', edit_masterpiece_path(masterpiece) %> | </a>
+              <a href="#" class="card-link"><%= link_to 'Destroy', masterpiece, method: :delete, data: { confirm: 'Are you sure?' } %></a>
+            </div>
           </div>
-        </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
+<% end %>
 </div>
-
 </body>

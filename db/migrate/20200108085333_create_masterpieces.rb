@@ -4,6 +4,7 @@ class CreateMasterpieces < ActiveRecord::Migration[5.2]
       t.string :Name
       t.string :Artist
       t.string :Picture
+      t.string :country
       t.text :Description
 
       t.timestamps

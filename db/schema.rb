@@ -10,19 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_08_085333) do
+ActiveRecord::Schema.define(version: 2020_01_10_133759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "artistics", force: :cascade do |t|
-    t.string "Odyssey"
-    t.string "Name"
-    t.string "Artist"
-    t.string "Picture"
-    t.text "Description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "countries", force: :cascade do |t|
+    t.string "name"
   end
 
   create_table "masterpieces", force: :cascade do |t|
@@ -32,16 +26,9 @@ ActiveRecord::Schema.define(version: 2020_01_08_085333) do
     t.text "Description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "country_id"
+    t.index ["country_id"], name: "index_masterpieces_on_country_id"
   end
 
-  create_table "odyssees", force: :cascade do |t|
-    t.string "Artistique"
-    t.string "Name"
-    t.string "Artist"
-    t.string "Picture"
-    t.text "Description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
+  add_foreign_key "masterpieces", "countries"
 end

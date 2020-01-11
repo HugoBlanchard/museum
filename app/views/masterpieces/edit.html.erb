@@ -1,6 +1,7 @@
 <h1>Editing Masterpiece</h1>
 
 <%= render 'form', masterpiece: @masterpiece %>
+<br>
+<button type="button" class="btn btn-light"><%= link_to 'Show', @masterpiece %></button>
+<button type="button" class="btn btn-light"><%= link_to 'Back', countries_path %></button>
 
-<%= link_to 'Show', @masterpiece %> |
-<%= link_to 'Back', masterpieces_path %>
