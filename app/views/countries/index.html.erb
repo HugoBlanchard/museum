@@ -42,7 +42,10 @@ text-align: center;
   <div class="container">
     <div class="row">
       <% country.masterpieces.each do |masterpiece| %>
-          <div class="col-sm-6" style="width: 18rem;">
+          <div class="col-sm-6 card" style="
+          width: 18rem;
+
+          ">
             <img src="<%= masterpiece.Picture %>" class="card-img-top" alt="...">
             <div class="card-body" style="text-align: left;">
               <h5 class="card-title"><%= masterpiece.Name %></h5>
