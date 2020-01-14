@@ -10,12 +10,18 @@ style="
 text-align: center;
 ">
 <MAP NAME="barre">
-<AREA SHAPE="RECT" COORDS="510,285,540,315" HREF="#item-1">
-<AREA SHAPE="RECT" COORDS="497,285,525,256," HREF="#item-2">
-<AREA SHAPE="RECT" COORDS="495,335,523,310" HREF="#item-3">
-<AREA SHAPE="RECT" COORDS="320,45,390,78" HREF="xml.htm" ALT="Notions XML">
+<AREA SHAPE="RECT" COORDS="522,302,546,262" HREF="#item-1">
+<AREA SHAPE="RECT" COORDS="492,281,520,241," HREF="#item-2">
+<AREA SHAPE="RECT" COORDS="490,331,516,297" HREF="#item-3">
+<AREA SHAPE="RECT" COORDS="557,319,591,287" HREF="#item-4">
+<AREA SHAPE="RECT" COORDS="552,290,585,259" HREF="#item-5">
+<AREA SHAPE="RECT" COORDS="530,244,553,204" HREF="#item-6">
+<AREA SHAPE="RECT" COORDS="732,212,761,172" HREF="#item-7">
+<AREA SHAPE="RECT" COORDS="216,335,241,295" HREF="#item-8">
+<AREA SHAPE="RECT" COORDS="508,399,532,359" HREF="#item-9">
+<AREA SHAPE="RECT" COORDS="844,353,878,320" HREF="#item-10">
 </MAP>
-<IMG SRC="https://nsa40.casimages.com/img/2020/01/08/20010805402737907.jpg" USEMAP="#barre" border=0 width=1100 height=710>
+<IMG SRC="https://nsa40.casimages.com/img/2020/01/14/200114012215517325.png" USEMAP="#barre" border=0 width=1100 height=710>
 </div>
 <br>
 <br>
@@ -24,7 +30,6 @@ text-align: center;
 style="
 text-align: center;
 ">
-<h1>MASTERPIECES</h1>
 
 <button type="button" class="btn btn-lg btn-block btn-dark"><%= link_to 'New Masterpiece', new_masterpiece_path %></button>
 </div>
@@ -38,7 +43,7 @@ text-align: center;
 
 
 <% @countries.each do |country| %>
-  <h2 id="item-<%= country.id %>"><%= country.name %></h2>
+  <h1 id="item-<%= country.id %>"><%= country.name %></h1>
   <div class="container">
     <div class="row">
       <% country.masterpieces.each do |masterpiece| %>
